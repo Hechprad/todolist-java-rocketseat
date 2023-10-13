@@ -11,70 +11,9 @@
 Este projeto possui a finalidade de disponibilizar uma API para cadastro de usuários, cadastro e edição de tarefas.
 Foi elaborado durante o evento de lançamento do curso de Java da Rocketseat 🚀
 
-#### Executando a aplicação
-
-- Execute no terminal
-
-```shell
-  mvn spring-boot:run
-```
-
-- Base path local => "<http://localhost:8080>"
-
-- Endereço para acessar o banco de dados em memória H2 => "<http://localhost:8080/h2-console>"
-- Cadastrar usuário => POST - "/users"
-  - Body
-
-```JSON
-{
-  "name": String;
-  "password": String;
-  "userName": String;
-  "email": String;
-}
-```
-
-- Cadastrar tarefa => POST - "/tasks"
-  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
-  - Body
-
-```JSON
-{
-  "description": String;
-  "endAt": String;
-  "priority": String;
-  "startAt": String;
-  "title": String;
-}
-```
-
-- Buscar lista de tarefas cadastradas => GET - "/tasks"
-  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
-- Editar tarefa => PUT - "/tasks/:id"
-  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
-  - Body - (Campos opcionais)
-
-```JSON
-{
-  "description": String;
-  "endAt": String;
-  "priority": String;
-  "startAt": String;
-  "title": String;
-}
-```
-
-#### Subir aplicação com docker
-
-Caso queira executar a API sem instalar os pré-requisitos para rodar um ambiente Java, acesse a raiz do projeto e execute no terminal:
-
-```shell
-  ./run-app.sh
-```
-
 #### Configurando o ambiente de desenvolvimento
 
-Desenvolvimento foi realizado utilizando wsl2 e [VSCode](https://code.visualstudio.com/Download).
+O desenvolvimento foi realizado utilizando wsl2 e [VSCode](https://code.visualstudio.com/Download).
 
 ---
 
@@ -136,6 +75,67 @@ Reinicie o terminal.
   - "vscjava.vscode-spring-boot-dashboard"
 
 ---
+
+#### Executando a aplicação
+
+- Execute no terminal
+
+```shell
+  mvn spring-boot:run
+```
+
+- Base path local => "<http://localhost:8080>"
+
+- Endereço para acessar o banco de dados em memória H2 => "<http://localhost:8080/h2-console>"
+- Cadastrar usuário => POST - "/users"
+  - Body
+
+```JSON
+{
+  "name": String;
+  "password": String;
+  "userName": String;
+  "email": String;
+}
+```
+
+- Cadastrar tarefa => POST - "/tasks"
+  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
+  - Body
+
+```JSON
+{
+  "description": String;
+  "endAt": String;
+  "priority": String;
+  "startAt": String;
+  "title": String;
+}
+```
+
+- Buscar lista de tarefas cadastradas => GET - "/tasks"
+  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
+- Editar tarefa => PUT - "/tasks/:id"
+  - Necessário enviar header de Authorization do tipo Basic Auth com as credenciais válidas de um usuário cadastrado.
+  - Body - (Campos opcionais)
+
+```JSON
+{
+  "description": String;
+  "endAt": String;
+  "priority": String;
+  "startAt": String;
+  "title": String;
+}
+```
+
+#### Subir aplicação com docker
+
+Caso queira executar a API sem instalar os pré-requisitos para rodar um ambiente Java, acesse a raiz do projeto e execute no terminal:
+
+```shell
+  ./run-app.sh
+```
 
 <div align="center">
   <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="java" />
